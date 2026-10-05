@@ -1,4 +1,4 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SBVA Maratona de Aracaju 2026 | SAFE</title><meta name="description" content="Capacitação em Suporte Básico de Vida e Resposta às Emergências na Prática Esportiva. SAFE e Dr. Rafa Gonçalves. Vire voluntário da equipe médica da Maratona de Aracaju 2026."><meta name="theme-color" content="#082545"></head><body>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SAFE Staff · Maratona de Aracaju 2026</title><meta name="description" content="SAFE Staff: capacitação prática em Suporte Básico de Vida e apoio ao fluxo médico em provas de rua. Maratona de Aracaju 2026, com o Dr. Rafa Gonçalves."><meta name="theme-color" content="#082545"></head><body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--ink);color:var(--fg);font:400 1.02rem/1.65 var(--f-body);-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:4px}
 
@@ -43,6 +43,7 @@ h3{font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.15;letter-spacing:-.015em}
 p{margin:0;text-wrap:pretty}
 .eyebrow{display:flex;align-items:center;gap:12px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.78rem;color:var(--green-2);margin:0 0 16px}
 .eyebrow::before{content:"";width:30px;height:3px;border-radius:2px;background:var(--green);flex:none}
+.hero-sub{font-family:var(--f-body);font-weight:400;letter-spacing:0;line-height:1.55;font-size:clamp(1.06rem,1.6vw,1.25rem);color:var(--muted);max-width:56ch;margin:0 0 26px}
 .lead{font-size:clamp(1.04rem,1.5vw,1.18rem);color:var(--muted);max-width:60ch}
 .hl{color:var(--lime)}
 .tbd{display:inline-block;color:var(--muted);border-bottom:1.5px dashed var(--muted);font-style:italic;line-height:1.3}
@@ -80,7 +81,7 @@ p{margin:0;text-wrap:pretty}
   radial-gradient(40% 40% at 0% 100%,rgba(255,107,44,.16),transparent 62%),
   linear-gradient(180deg,var(--ink-3) 0%,var(--ink) 100%)}
 .hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,72px);align-items:center}
-.hero h1{margin-bottom:24px}
+.hero h1{margin-bottom:18px;font-size:clamp(1.9rem,3.9vw,3.2rem)}
 .hero .lead{margin-bottom:30px}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:22px}
 .price-hint{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.96rem;color:var(--muted);margin-bottom:30px}
@@ -318,19 +319,20 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
 <section class="hero" id="hero">
   <div class="wrap">
     <div>
-      <p class="eyebrow">SAFE · Treinamento SBVA</p>
-      <h1>Vire voluntário da <span class="hl">equipe médica</span> da Maratona de Aracaju</h1>
-      <p class="lead">Você não precisa ser médico. Faça a capacitação em Suporte Básico de Vida e Resposta às Emergências na Prática Esportiva, com 2 horas de teoria online e prática em turma pequena.</p>
+      <p class="eyebrow">Capacitação oficial · Maratona de Aracaju</p>
+      <h1><span class="hl">SAFE Staff</span> · Formação de Staff em Medicina Esportiva</h1>
+      <h2 class="hero-sub">Capacitação prática em Suporte Básico de Vida e apoio ao fluxo médico em provas de rua.</h2>
       <ul class="trust">
-        <li>Certificado de conclusão</li>
-        <li>Teoria ao vivo + prática com manequins</li>
+        <li>Teoria ao vivo + prática</li>
+        <li>Certificado válido por 1 ano</li>
         <li>Com o Dr. Rafa Gonçalves</li>
+        <li>Não precisa ser médico</li>
       </ul>
       <div class="cta-row">
         <a class="btn" href="#inscricao">Garantir minha vaga</a>
         <a class="btn ghost" href="#como-funciona">Ver como funciona</a>
       </div>
-      <p class="price-hint"><span>Individual <b>R$ 125</b></span><span>Casadinha <b>R$ 200</b> (R$ 100 cada)</span><span>Em até <b>20x</b> no cartão</span></p>
+      <p class="price-hint"><span>Individual <b>R$ 125</b></span><span>Casadinha <b>R$ 200</b> (R$ 100 cada)</span><span><b>Pagamento parcelado</b></span></p>
       <div class="when">
         <span><strong>Maratona de Aracaju · 31 out e 01 nov 2026</strong></span>
         <span id="contagem"></span>
@@ -346,8 +348,8 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
 <!-- faixa -->
 <div class="ticker" aria-hidden="true">
   <div class="track">
-    <span>Maratona de Aracaju 2026</span><span>Teoria online · 2h</span><span>Prática em turmas de 20</span><span>Certificado de conclusão</span><span>SAFE + Dr. Rafa Gonçalves</span>
-    <span>Maratona de Aracaju 2026</span><span>Teoria online · 2h</span><span>Prática em turmas de 20</span><span>Certificado de conclusão</span><span>SAFE + Dr. Rafa Gonçalves</span>
+    <span>Maratona de Aracaju 2026</span><span>Teoria online · 2h</span><span>Prática em turmas de 20</span><span>Certificado válido por 1 ano</span><span>SAFE + Dr. Rafa Gonçalves</span>
+    <span>Maratona de Aracaju 2026</span><span>Teoria online · 2h</span><span>Prática em turmas de 20</span><span>Certificado válido por 1 ano</span><span>SAFE + Dr. Rafa Gonçalves</span>
   </div>
 </div>
 
@@ -355,7 +357,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
 <section class="turma" id="turma">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Próximos encontros</p>
+      <p class="eyebrow">Dois dias · 13/10 e 16/10</p>
       <h2>A turma começa em breve</h2>
       <div class="dates">
         <div class="date">
@@ -364,11 +366,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
         </div>
         <div class="date">
           <span class="d">16/10</span>
-          <p><b>Teoria ao vivo · 2h · sexta-feira</b>Segunda data, mesmo conteúdo. <span class="tbd">horário a definir</span></p>
-        </div>
-        <div class="date">
-          <span class="d">Prática</span>
-          <p><b>4 turmas de cerca de 20 pessoas</b>2h por turma. <span class="tbd">datas e local a definir</span></p>
+          <p><b>Prática presencial · sexta-feira</b>4 turmas de cerca de 20 pessoas, 2h por turma. <span class="tbd">horário e local a definir</span></p>
         </div>
       </div>
     </div>
@@ -401,12 +399,12 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
         <p><b>Turmas pequenas.</b> Cerca de 20 pessoas por turma, com atenção real a cada aluno.</p>
       </div>
       <div class="perk">
-        <span class="big">4</span>
-        <p><b>Manequins por turma.</b> Você pratica RCP e DEA com as próprias mãos, sozinho e em dupla.</p>
+        <span class="big">RCP+DEA</span>
+        <p><b>Mão na massa.</b> Você pratica RCP e DEA com as próprias mãos, sozinho e em dupla, até virar reflexo.</p>
       </div>
       <div class="perk">
-        <span class="big">Certificado</span>
-        <p><b>Certificado de conclusão</b> mediante cumprimento de todas as horas.</p>
+        <span class="big">1 ano</span>
+        <p><b>Certificado válido por 1 ano.</b> Atesta sua aptidão e isenta de refazer o treinamento em futuras provas no prazo.</p>
       </div>
     </div>
   </div>
@@ -442,7 +440,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
 </section>
 
 <!-- 5. O CURSO: DOIS MÓDULOS -->
-<section class="alt" id="sbva">
+<section class="alt" id="curso">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">O curso</p>
@@ -453,7 +451,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       <article class="mod">
         <div class="top-row"><span class="k">Módulo I · Teórico</span><span class="h">2h</span></div>
         <h3>Do atleta que colapsa ao socorro certo</h3>
-        <p class="sub">Aula ao vivo e online, com o passo a passo do atendimento em prova.</p>
+        <p class="sub">Terça-feira, 13/10. Aula ao vivo e online, com o passo a passo do atendimento em prova.</p>
         <ol class="flow">
           <li>Organização médica da prova</li>
           <li>Atleta colapsado</li>
@@ -466,10 +464,9 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       </article>
       <article class="mod p">
         <div class="top-row"><span class="k">Módulo II · Prático</span><span class="h">2h</span></div>
-        <h3>4 turmas, 4 manequins, treino de verdade</h3>
-        <p class="sub">Duas horas por turma. <span class="tbd" style="color:#fff;border-color:rgba(255,255,255,.7)">local a definir</span></p>
+        <h3>Treino de verdade, em turma pequena</h3>
+        <p class="sub">Sexta-feira, 16/10. Duas horas por turma. <span class="tbd" style="color:#fff;border-color:rgba(255,255,255,.7)">horário e local a definir</span></p>
         <ol class="flow">
-          <li>4 manequins</li>
           <li>Demonstração</li>
           <li>Prática individual</li>
           <li>RCP e DEA</li>
@@ -481,7 +478,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       </article>
     </div>
     <div class="syllabus">
-      <p><b>Certificado de conclusão</b> mediante cumprimento de todas as horas: as 2h de teoria e as 2h de prática.</p>
+      <p><b>Certificação e validade.</b> A emissão do certificado está vinculada ao cumprimento integral das 2h teóricas e 2h práticas. Válido por 1 ano, o certificado atesta a aptidão do participante e o isenta da necessidade de refazer o treinamento em futuras edições de provas dentro do prazo de validade.</p>
     </div>
   </div>
 </section>
@@ -491,7 +488,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Como funciona</p>
-      <h2>Teoria online e prática em turma pequena</h2>
+      <h2>Dois dias: teoria online e prática em turma pequena</h2>
     </div>
     <ol class="steps">
       <li>
@@ -502,17 +499,17 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       <li>
         <span class="n">2</span>
         <h3>Teoria ao vivo</h3>
-        <p>2 horas online, em terça-feira, 13/10, ou sexta-feira, 16/10. Link exclusivo para inscritos.</p>
+        <p>Terça-feira, 13/10: 2 horas online e ao vivo. Link exclusivo para inscritos.</p>
       </li>
       <li>
         <span class="n">3</span>
         <h3>Prática em turma</h3>
-        <p>2 horas com cerca de 20 pessoas e 4 manequins, para treinar de verdade. <span class="tbd">datas e local a definir</span></p>
+        <p>Sexta-feira, 16/10: 2 horas com cerca de 20 pessoas, para treinar de verdade. <span class="tbd">horário e local a definir</span></p>
       </li>
       <li>
         <span class="n">4</span>
         <h3>Certificado e escala</h3>
-        <p>Cumpridas todas as horas, você recebe o certificado e fica apto a ser selecionado para a equipe de apoio da prova. Metade da turma atua em 31/10 e a outra metade em 01/11.</p>
+        <p>Cumpridas todas as horas, você recebe o certificado, válido por 1 ano, e fica apto a ser selecionado para a equipe de apoio da prova. Metade da turma atua em 31/10 e a outra metade em 01/11.</p>
       </li>
     </ol>
   </div>
@@ -634,8 +631,8 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
         <ul>
           <li>2h de teoria ao vivo e online</li>
           <li>2h de prática em turma de cerca de 20 pessoas</li>
-          <li>Treino com manequins, RCP e DEA</li>
-          <li>Certificado de conclusão</li>
+          <li>Treino prático de RCP e DEA</li>
+          <li>Certificado de conclusão válido por 1 ano</li>
         </ul>
         <!-- TROCAR href pelo link de pagamento do lote individual -->
         <a class="btn green" href="#inscricao">Garantir minha vaga</a>
@@ -649,14 +646,14 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
         <ul>
           <li>Tudo do lote individual, para você e sua dupla</li>
           <li>Treinem juntos na prática em dupla</li>
-          <li>Dois certificados de conclusão</li>
+          <li>Dois certificados válidos por 1 ano</li>
         </ul>
         <!-- TROCAR href pelo link de pagamento do lote casadinha -->
         <a class="btn" href="#inscricao">Garantir vaga em dupla</a>
       </div>
     </div>
     <div class="fine">
-      <p><b>Parcele em até 20x no cartão.</b> Os acréscimos do parcelamento ficam por conta do comprador.</p>
+      <p><b>Condição de pagamento parcelado.</b> Os acréscimos do parcelamento ficam por conta do comprador.</p>
     </div>
   </div>
 </section>
@@ -670,12 +667,12 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
     </div>
     <div class="faq">
       <details>
-        <summary>Preciso ser da área da saúde?</summary>
-        <p>Não. A categoria de apoio é aberta a profissionais de outras áreas, estudantes e interessados em geral. O que vale é concluir a capacitação.</p>
+        <summary>Preciso ser médico?</summary>
+        <p>Não. Não precisa ser médico. A categoria de apoio é aberta a profissionais de outras áreas, estudantes e interessados em geral. O que vale é concluir a capacitação.</p>
       </details>
       <details>
         <summary>Quanto custa e como pago?</summary>
-        <p>O lote individual custa R$ 125,00. O lote casadinha custa R$ 200,00 e vale para 2 inscrições, ou seja, R$ 100,00 por pessoa. Dá para parcelar em até 20x no cartão, com os acréscimos do parcelamento por conta do comprador.</p>
+        <p>O lote individual custa R$ 125,00. O lote casadinha custa R$ 200,00 e vale para 2 inscrições, ou seja, R$ 100,00 por pessoa. Há condição de pagamento parcelado, com os acréscimos do parcelamento por conta do comprador.</p>
       </details>
       <details>
         <summary>Como me inscrevo?</summary>
@@ -683,15 +680,15 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       </details>
       <details>
         <summary>Como é o curso?</summary>
-        <p>São dois módulos. O Módulo I é teórico, tem 2 horas e acontece online e ao vivo, na terça-feira 13/10 ou na sexta-feira 16/10. O Módulo II é prático: 4 turmas de cerca de 20 pessoas, com 2 horas por turma e 4 manequins.</p>
+        <p>São dois dias. Na terça-feira, 13/10, o Módulo I: 2 horas de teoria online e ao vivo. Na sexta-feira, 16/10, o Módulo II: prática presencial em 4 turmas de cerca de 20 pessoas, com 2 horas por turma.</p>
       </details>
       <details>
         <summary>Onde e quando é a prática?</summary>
-        <p>A prática é presencial, em turmas pequenas, para que cada aluno treine de verdade. <span class="tbd">Local e datas a definir.</span> Os inscritos recebem as informações assim que forem confirmadas.</p>
+        <p>A prática é na sexta-feira, 16/10, presencial e em turmas pequenas, para que cada aluno treine de verdade. <span class="tbd">Local e horário a definir.</span> Os inscritos recebem as informações assim que forem confirmadas.</p>
       </details>
       <details>
         <summary>Como recebo o certificado?</summary>
-        <p>O certificado de conclusão é emitido mediante cumprimento de todas as horas: as 2 horas de teoria e as 2 horas de prática.</p>
+        <p>A emissão do certificado está vinculada ao cumprimento integral das 2h teóricas e 2h práticas. Válido por 1 ano, o certificado atesta a aptidão do participante e o isenta da necessidade de refazer o treinamento em futuras edições de provas dentro do prazo de validade.</p>
       </details>
       <details>
         <summary>Em qual dia eu atuo na prova?</summary>
@@ -724,7 +721,8 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       <span class="txt"><span class="word">SAFE</span><span class="tag">Proteção médica<br>em provas esportivas</span></span>
     </span>
     <div class="legal">
-      <p><strong>Treinamento SBVA · Maratona de Aracaju 2026</strong></p>
+      <p><strong>SAFE Staff · Maratona de Aracaju 2026</strong></p>
+      <p>SAFE · Medicina Esportiva &amp; Staff Operacional</p>
       <p>Realização: SAFE, em conjunto com o Dr. Rafa Gonçalves. Responsável técnico: Dr. Rafael Gonçalves Souza · CRM-SE 4707 · RQE 5239</p>
       <p>© 2026 Todos os direitos reservados.</p>
       <p>Desenvolvido por <a class="dev" href="https://wa.me/5579981697274?text=Oi%20Neto%2C%20vi%20seu%20painel%20comercial%21" target="_blank" rel="noopener">Neto Lima</a> - Opex Growth</p>
@@ -756,7 +754,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
 
   /* Contador ao vivo. Horário de Aracaju (UTC-3). AJUSTAR quando o horário da teoria for definido. */
   var teoria1=Date.UTC(2026,9,13,22,0,0);   /* 13/10 às 19h (horário provisório) */
-  var teoria2=Date.UTC(2026,9,16,22,0,0);   /* 16/10 às 19h (horário provisório) */
+  var teoria2=Date.UTC(2026,9,16,3,0,0);    /* 16/10 prática, desde 00h (horário a definir) */
   var provaIni=Date.UTC(2026,9,31,3,0,0);   /* 31/10 desde 00h */
   var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),
       m=document.getElementById('cd-m'),s=document.getElementById('cd-s'),
@@ -765,7 +763,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
   function tick(){
     var agora=Date.now(),alvo=null;
     if(agora<teoria1){alvo=teoria1;r.textContent='Faltam para a aula de teoria (13/10)'}
-    else if(agora<teoria2){alvo=teoria2;r.textContent='Faltam para a segunda data de teoria (16/10)'}
+    else if(agora<teoria2){alvo=teoria2;r.textContent='Faltam para a prática presencial (16/10)'}
     else if(agora<provaIni){alvo=provaIni;r.textContent='Faltam para a Maratona de Aracaju'}
     else{r.textContent='A Maratona de Aracaju começou'}
     var t=alvo?Math.max(0,alvo-agora):0;
