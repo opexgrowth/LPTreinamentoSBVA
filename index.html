@@ -168,6 +168,21 @@ p{margin:0;text-wrap:pretty}
 .flow li:not(:last-child)::after{content:"→";margin-left:9px;color:var(--orange);font-weight:800}
 .mod.p .flow li:not(:last-child)::after{color:var(--lime)}
 .flow li:last-child,.mod.p .flow li:last-child{background:var(--lime);border-color:transparent;color:var(--ink)}
+.aud{margin:-6px 0 22px;font-size:1rem;color:var(--muted);max-width:56ch}
+.aud b{color:var(--green-2);font-weight:700}
+.aud-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.aud-grid li{display:grid;place-items:center;text-align:center;min-height:112px;padding:18px 12px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.015));position:relative;overflow:hidden;transition:transform .2s ease,border-color .2s ease}
+.aud-grid li::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--green)}
+.aud-grid li:nth-child(2)::before{background:var(--orange)}
+.aud-grid li:nth-child(3)::before{background:var(--lime)}
+.aud-grid li:nth-child(4)::before{background:var(--green)}
+.aud-grid li:nth-child(5)::before{background:var(--orange)}
+.aud-grid li:hover{transform:translateY(-4px);border-color:rgba(55,208,176,.6)}
+.aud-grid span{font-family:var(--f-display);font-weight:800;font-size:clamp(1.05rem,1.8vw,1.3rem);letter-spacing:-.02em;line-height:1.1}
+@media (max-width:900px){.aud-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.aud-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.aud-grid li{min-height:84px}.aud-grid li:last-child{grid-column:span 2}}
+.slots{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.slots li{font-family:var(--f-display);font-weight:800;font-size:1.02rem;letter-spacing:-.02em;text-align:center;padding:12px 8px;border-radius:12px;background:rgba(8,37,69,.38);border:1px solid rgba(255,255,255,.28)}
 .facts{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .facts li{font-size:.84rem;font-weight:700;padding:6px 12px;border-radius:8px;background:rgba(8,37,69,.45);color:#fff}
 @media (max-width:900px){.mods{grid-template-columns:1fr}}
@@ -195,12 +210,18 @@ p{margin:0;text-wrap:pretty}
 @media (max-width:760px){.safe{grid-template-columns:1fr}}
 
 /* vídeo */
-.video{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:18px;overflow:hidden;border:1.5px dashed var(--muted);background:linear-gradient(135deg,var(--ink-3) 0%,#0A3A63 55%,#0C7F6B 100%);display:grid;place-items:center;text-align:center;padding:20px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
-.video .play{width:88px;height:88px;border-radius:50%;background:var(--orange);display:grid;place-items:center;margin:0 auto 16px;box-shadow:0 12px 34px rgba(255,107,44,.4)}
-.video .play::before{content:"";margin-left:6px;border-left:24px solid var(--ink);border-top:15px solid transparent;border-bottom:15px solid transparent}
-.video .label{font-family:var(--f-display);font-weight:800;font-size:clamp(1.4rem,3.2vw,2.2rem);line-height:1.05;letter-spacing:-.03em}
-.video .sub{color:var(--muted);margin-top:8px;font-size:.95rem}
-.video .chip{position:absolute;top:14px;left:14px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;color:var(--ink);background:var(--lime);padding:5px 12px;border-radius:999px}
+.vid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);grid-template-areas:"v h" "v f";grid-template-rows:auto auto;column-gap:clamp(28px,6vw,80px);row-gap:18px;align-content:center;align-items:start}
+.vid-frame{grid-area:v}.vid-head{grid-area:h;display:grid;gap:18px;align-self:end}.vid-foot{grid-area:f;display:grid;gap:18px;align-self:start}
+.vid-frame{position:relative;width:min(100%,340px);aspect-ratio:9/16;margin-inline:auto;border-radius:26px;overflow:hidden;background:#06182e;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 0 6px rgba(255,255,255,.04)}
+.vid-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#06182e}
+.vid-chip{position:absolute;z-index:2;top:12px;left:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;color:var(--ink);background:var(--lime);padding:5px 11px;border-radius:999px;pointer-events:none}
+.vid-facts{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.vid-facts li{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--glass)}
+.vid-facts b{display:block;font-family:var(--f-display);font-weight:800;font-size:1.05rem;color:var(--fg);margin-bottom:2px}
+.vid-facts span{font-size:.88rem;color:var(--muted)}
+.vid-foot .btn{justify-self:start;margin-top:6px}
+@media (max-width:820px){.vid{grid-template-columns:1fr;grid-template-areas:"h" "v" "f";row-gap:26px}.vid-foot .btn{justify-self:stretch}}
+@media (max-width:420px){.vid-facts{gap:10px}.vid-facts li{padding:12px 13px}.vid-facts b{font-size:.95rem}.vid-facts span{font-size:.8rem}}
 
 /* Dr. Rafa */
 .doc{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,6vw,80px);align-items:center}
@@ -250,6 +271,23 @@ p{margin:0;text-wrap:pretty}
 .plan.pro ul{border-top-color:rgba(8,37,69,.2)}
 .plan .badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--lime);color:var(--ink);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.74rem;padding:7px 18px;border-radius:999px}
 .save{display:inline-block;background:var(--lime);color:var(--ink);border-radius:8px;padding:6px 12px;font-weight:700;font-size:.9rem}
+.deadline{max-width:920px;margin:0 auto 34px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 28px;align-items:center;padding:20px 26px;border-radius:18px;border:1.5px solid rgba(215,243,58,.55);background:rgba(215,243,58,.07)}
+.dl-k{font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;color:var(--lime)}
+.dl-v{font-family:var(--f-display);font-weight:800;font-size:clamp(1.15rem,2.4vw,1.5rem);letter-spacing:-.025em;line-height:1.15;margin-top:4px}
+.dl-s{color:var(--muted);font-size:.92rem;margin-top:6px}
+.dl-s b{color:var(--fg);font-weight:700}
+.dl-timer{display:flex;gap:8px}
+.dl-timer div{min-width:64px;text-align:center;background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:9px 6px}
+.dl-timer b{display:block;font-family:var(--f-display);font-weight:800;font-size:1.7rem;line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.dl-timer div:last-child b{color:var(--lime)}
+.dl-timer span{display:block;margin-top:5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;color:var(--muted)}
+@media (max-width:700px){.deadline{grid-template-columns:1fr;padding:18px}.dl-timer{justify-content:space-between}.dl-timer div{flex:1;min-width:0}}
+.closed-msg{max-width:920px;margin:0 auto 20px;text-align:center;padding:26px;border:1.5px dashed var(--muted);border-radius:16px;color:var(--muted)}
+.closed-msg b{color:var(--fg)}
+.btn.off{background:#34506e;color:#A9BCD1;box-shadow:none;pointer-events:none}
+.btn.off::after{content:""}
+body.closed .plans,body.closed .fine,body.closed .sticky{display:none!important}
+body.closed .dl-timer{display:none}
 .fine{max-width:920px;margin:28px auto 0;text-align:center;color:var(--muted);font-size:.86rem;display:grid;gap:6px}
 .fine b{color:var(--fg);font-weight:700}
 @media (max-width:760px){.plans{grid-template-columns:1fr;gap:34px}}
@@ -322,6 +360,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       <p class="eyebrow">Capacitação oficial · Maratona de Aracaju</p>
       <h1><span class="hl">SAFE Staff</span> · Formação de Staff em Medicina Esportiva</h1>
       <h2 class="hero-sub">Capacitação prática em Suporte Básico de Vida e apoio ao fluxo médico em provas de rua.</h2>
+      <p class="aud"><b>Para estudantes</b> de Medicina, Enfermagem, Nutrição, Fisioterapia e Educação Física.</p>
       <ul class="trust">
         <li>Teoria ao vivo + prática</li>
         <li>Certificado válido por 1 ano</li>
@@ -332,7 +371,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
         <a class="btn" href="#inscricao">Garantir minha vaga</a>
         <a class="btn ghost" href="#como-funciona">Ver como funciona</a>
       </div>
-      <p class="price-hint"><span>Individual <b>R$ 125</b></span><span>Casadinha <b>R$ 200</b> (R$ 100 cada)</span><span><b>Pagamento parcelado</b></span></p>
+      <p class="price-hint"><span>Individual <b>R$ 125</b></span><span>Casadinha <b>R$ 200</b> (R$ 100 cada)</span><span><b>Pagamento parcelado</b></span><span><b>80 vagas</b></span></p>
       <div class="when">
         <span><strong>Maratona de Aracaju · 31 out e 01 nov 2026</strong></span>
         <span id="contagem"></span>
@@ -362,16 +401,16 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       <div class="dates">
         <div class="date">
           <span class="d">13/10</span>
-          <p><b>Teoria ao vivo · 2h · terça-feira</b>Online, em sala fechada para inscritos. <span class="tbd">horário a definir</span></p>
+          <p><b>Teoria ao vivo · terça-feira, às 19h</b>2 horas, online, em sala fechada para inscritos.</p>
         </div>
         <div class="date">
           <span class="d">16/10</span>
-          <p><b>Prática presencial · sexta-feira</b>4 turmas de cerca de 20 pessoas, 2h por turma. <span class="tbd">horário e local a definir</span></p>
+          <p><b>Prática presencial · sexta-feira</b>4 turmas de 20 pessoas: 8h às 10h, 10h às 12h, 13h às 15h e 15h às 17h. <span class="tbd">local a definir</span></p>
         </div>
       </div>
     </div>
     <div>
-      <p class="timer-label" id="cd-rotulo">Faltam para a aula de teoria</p>
+      <p class="timer-label" id="cd-rotulo">Inscrições encerram em</p>
       <div class="timer" role="timer" aria-label="Contagem regressiva para a primeira aula">
         <div class="unit"><b id="cd-d">00</b><span>dias</span></div>
         <div class="unit"><b id="cd-h">00</b><span>horas</span></div>
@@ -379,6 +418,24 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
         <div class="unit s"><b id="cd-s">00</b><span>seg</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- 2b. PÚBLICO-ALVO -->
+<section id="publico">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Para quem é</p>
+      <h2>Feito para estudantes da área da saúde</h2>
+      <p class="lead">Se você estuda um destes cursos, esta é a sua porta de entrada na equipe médica de uma prova de rua. Não precisa ser médico.</p>
+    </div>
+    <ul class="aud-grid">
+      <li><span>Medicina</span></li>
+      <li><span>Enfermagem</span></li>
+      <li><span>Nutrição</span></li>
+      <li><span>Fisioterapia</span></li>
+      <li><span>Educação Física</span></li>
+    </ul>
   </div>
 </section>
 
@@ -465,7 +522,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       <article class="mod p">
         <div class="top-row"><span class="k">Módulo II · Prático</span><span class="h">2h</span></div>
         <h3>Treino de verdade, em turma pequena</h3>
-        <p class="sub">Sexta-feira, 16/10. Duas horas por turma. <span class="tbd" style="color:#fff;border-color:rgba(255,255,255,.7)">horário e local a definir</span></p>
+        <p class="sub">Sexta-feira, 16/10. Escolha o horário da sua turma. <span class="tbd" style="color:#fff;border-color:rgba(255,255,255,.7)">local a definir</span></p>
         <ol class="flow">
           <li>Demonstração</li>
           <li>Prática individual</li>
@@ -474,7 +531,8 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
           <li>Cenário simulado de PCR durante a corrida</li>
           <li>Debriefing e avaliação prática</li>
         </ol>
-        <ul class="facts"><li>4 turmas</li><li>~20 pessoas por turma</li><li>2h por turma</li></ul>
+        <ul class="slots" aria-label="Horários das turmas práticas"><li>8h às 10h</li><li>10h às 12h</li><li>13h às 15h</li><li>15h às 17h</li></ul>
+        <ul class="facts"><li>4 turmas</li><li>Grupos de 20 pessoas</li><li>2h por turma</li></ul>
       </article>
     </div>
     <div class="syllabus">
@@ -499,12 +557,12 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       <li>
         <span class="n">2</span>
         <h3>Teoria ao vivo</h3>
-        <p>Terça-feira, 13/10: 2 horas online e ao vivo. Link exclusivo para inscritos.</p>
+        <p>Terça-feira, 13/10, às 19h: 2 horas online e ao vivo. Link exclusivo para inscritos.</p>
       </li>
       <li>
         <span class="n">3</span>
         <h3>Prática em turma</h3>
-        <p>Sexta-feira, 16/10: 2 horas com cerca de 20 pessoas, para treinar de verdade. <span class="tbd">horário e local a definir</span></p>
+        <p>Sexta-feira, 16/10, em grupos de 20 pessoas, para treinar de verdade. Horários: 8h às 10h, 10h às 12h, 13h às 15h ou 15h às 17h. <span class="tbd">local a definir</span></p>
       </li>
       <li>
         <span class="n">4</span>
@@ -515,24 +573,29 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
   </div>
 </section>
 
-<!-- 7. VÍDEO (espaço reservado) -->
+<!-- 7. VÍDEO -->
 <section class="alt" id="video">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Vídeo de apresentação</p>
-      <h2>Entenda o curso em poucos minutos</h2>
-      <p class="lead">O Dr. Rafa explica como funciona o credenciamento, o curso e o que esperar do dia da prova.</p>
-    </div>
-    <!--
-      TROCAR NA VERSÃO FINAL: substitua o bloco abaixo por
-      <div class="video"><iframe src="LINK_DO_VIDEO" title="Vídeo de apresentação do curso" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
-    -->
-    <div class="video" role="img" aria-label="Espaço reservado para o vídeo de apresentação">
-      <span class="chip">Espaço do vídeo</span>
-      <div>
-        <div class="play" aria-hidden="true"></div>
-        <div class="label">Vídeo em breve</div>
-        <p class="sub">Gravação com o Dr. Rafa Gonçalves · duração a definir</p>
+    <div class="vid">
+      <div class="vid-frame">
+        <span class="vid-chip">Dr. Rafa Gonçalves</span>
+        <video controls playsinline preload="metadata" poster="vid/poster-dr-rafa.jpg" aria-label="Vídeo de apresentação do curso com o Dr. Rafa Gonçalves">
+          <source src="vid/video-dr-rafa.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="vid-head">
+        <p class="eyebrow">Vídeo de apresentação</p>
+        <h2>Entenda o curso direto com o Dr. Rafa</h2>
+        <p class="lead">Dê o play e veja como funciona a formação que prepara você para atuar na Maratona de Aracaju. Em seguida, garanta sua vaga.</p>
+      </div>
+      <div class="vid-foot">
+        <ul class="vid-facts">
+          <li><b>Teoria ao vivo</b><span>Terça 13/10 · 19h · 2h online</span></li>
+          <li><b>Prática em turma</b><span>Sexta 16/10 · 4 turmas de 20 · 2h</span></li>
+          <li><b>Certificado</b><span>Válido por 1 ano</span></li>
+          <li><b>Na prova</b><span>Atuação em 31/10 ou 01/11</span></li>
+        </ul>
+        <a class="btn" href="#inscricao">Garantir minha vaga</a>
       </div>
     </div>
   </div>
@@ -623,6 +686,20 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       <h2>Escolha seu lote e garanta a vaga</h2>
       <p class="lead">Acesse o link, realize o pagamento e preencha o formulário. É assim que você entra na turma.</p>
     </div>
+    <div class="deadline" id="prazo">
+      <div class="dl-txt">
+        <p class="dl-k" id="dl-k">Inscrições encerram</p>
+        <p class="dl-v">Sexta-feira, 09/10, às 23:59</p>
+        <p class="dl-s"><b>Vagas limitadas a 80</b> · 4 turmas de 20 pessoas</p>
+      </div>
+      <div class="dl-timer" role="timer" aria-label="Contagem regressiva para o fim das inscrições">
+        <div><b id="i-d">00</b><span>dias</span></div>
+        <div><b id="i-h">00</b><span>horas</span></div>
+        <div><b id="i-m">00</b><span>min</span></div>
+        <div><b id="i-s">00</b><span>seg</span></div>
+      </div>
+    </div>
+    <p class="closed-msg" id="closed-msg" hidden><b>Inscrições encerradas.</b> Obrigado pelo interesse. Fale com a SAFE para saber das próximas turmas.</p>
     <div class="plans">
       <div class="plan">
         <p class="kicker">Lote individual</p>
@@ -668,7 +745,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
     <div class="faq">
       <details>
         <summary>Preciso ser médico?</summary>
-        <p>Não. Não precisa ser médico. A categoria de apoio é aberta a profissionais de outras áreas, estudantes e interessados em geral. O que vale é concluir a capacitação.</p>
+        <p>Não. O curso é voltado a estudantes da área da saúde: Medicina, Enfermagem, Nutrição, Fisioterapia e Educação Física. O que vale é concluir a capacitação.</p>
       </details>
       <details>
         <summary>Quanto custa e como pago?</summary>
@@ -680,11 +757,11 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       </details>
       <details>
         <summary>Como é o curso?</summary>
-        <p>São dois dias. Na terça-feira, 13/10, o Módulo I: 2 horas de teoria online e ao vivo. Na sexta-feira, 16/10, o Módulo II: prática presencial em 4 turmas de cerca de 20 pessoas, com 2 horas por turma.</p>
+        <p>São dois dias. Na terça-feira, 13/10, às 19h, o Módulo I: 2 horas de teoria online e ao vivo. Na sexta-feira, 16/10, o Módulo II: prática presencial em 4 turmas de 20 pessoas, com 2 horas por turma (8h às 10h, 10h às 12h, 13h às 15h e 15h às 17h).</p>
       </details>
       <details>
         <summary>Onde e quando é a prática?</summary>
-        <p>A prática é na sexta-feira, 16/10, presencial e em turmas pequenas, para que cada aluno treine de verdade. <span class="tbd">Local e horário a definir.</span> Os inscritos recebem as informações assim que forem confirmadas.</p>
+        <p>A prática é na sexta-feira, 16/10, presencial e em grupos de 20 pessoas, em quatro horários: 8h às 10h, 10h às 12h, 13h às 15h e 15h às 17h. <span class="tbd">Local a definir.</span> Os inscritos recebem o local assim que for confirmado.</p>
       </details>
       <details>
         <summary>Como recebo o certificado?</summary>
@@ -693,10 +770,6 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
       <details>
         <summary>Em qual dia eu atuo na prova?</summary>
         <p>Concluída a capacitação, você fica apto a ser selecionado para a equipe de apoio. A escala é dividida: metade da turma atua em 31/10 e a outra metade em 01/11. As orientações finais serão divulgadas.</p>
-      </details>
-      <details>
-        <summary>Médicos formados precisam fazer o curso?</summary>
-        <p><span class="tbd">Regra a confirmar com a organização.</span></p>
       </details>
     </div>
   </div>
@@ -731,7 +804,7 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
 </footer>
 
 <div class="sticky" id="sticky">
-  <div class="t"><small>A partir de</small><strong>R$ 125</strong></div>
+  <div class="t"><small>Encerra em <span id="st-t">--</span></small><strong>R$ 125</strong></div>
   <a class="btn sm" href="#inscricao">Garantir vaga</a>
 </div>
 
@@ -752,27 +825,28 @@ body::before{content:"";display:block;height:5px;background:linear-gradient(90de
     el.textContent=txt;
   }
 
-  /* Contador ao vivo. Horário de Aracaju (UTC-3). AJUSTAR quando o horário da teoria for definido. */
-  var teoria1=Date.UTC(2026,9,13,22,0,0);   /* 13/10 às 19h (horário provisório) */
-  var teoria2=Date.UTC(2026,9,16,3,0,0);    /* 16/10 prática, desde 00h (horário a definir) */
-  var provaIni=Date.UTC(2026,9,31,3,0,0);   /* 31/10 desde 00h */
-  var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),
-      m=document.getElementById('cd-m'),s=document.getElementById('cd-s'),
-      r=document.getElementById('cd-rotulo');
+  /* Fim das inscrições: sexta 09/10 às 23:59:59 (Aracaju, UTC-3). AJUSTAR aqui se a data mudar. */
+  var fim=Date.UTC(2026,9,10,2,59,59);
   function p(n){return n<10?'0'+n:''+n}
-  function tick(){
-    var agora=Date.now(),alvo=null;
-    if(agora<teoria1){alvo=teoria1;r.textContent='Faltam para a aula de teoria (13/10)'}
-    else if(agora<teoria2){alvo=teoria2;r.textContent='Faltam para a prática presencial (16/10)'}
-    else if(agora<provaIni){alvo=provaIni;r.textContent='Faltam para a Maratona de Aracaju'}
-    else{r.textContent='A Maratona de Aracaju começou'}
-    var t=alvo?Math.max(0,alvo-agora):0;
-    d.textContent=p(Math.floor(t/86400000));
-    h.textContent=p(Math.floor(t%86400000/3600000));
-    m.textContent=p(Math.floor(t%3600000/60000));
-    s.textContent=p(Math.floor(t%60000/1000));
+  function g(i){return document.getElementById(i)}
+  var cd=[g('cd-d'),g('cd-h'),g('cd-m'),g('cd-s')], iv=[g('i-d'),g('i-h'),g('i-m'),g('i-s')];
+  var fechado=false;
+  function encerrar(){
+    if(fechado) return; fechado=true;
+    document.body.classList.add('closed');
+    var cm=g('closed-msg'); if(cm) cm.hidden=false;
+    var k=g('dl-k'); if(k) k.textContent='Inscrições encerradas';
+    var r=g('cd-rotulo'); if(r) r.textContent='Inscrições encerradas';
+    [].forEach.call(document.querySelectorAll('a.btn[href="#inscricao"]'),function(a){a.textContent='Inscrições encerradas';a.classList.add('off');a.setAttribute('aria-disabled','true');a.removeAttribute('href')});
   }
-  if(d){tick();setInterval(tick,1000)}
+  function tick(){
+    var t=fim-Date.now();
+    if(t<=0){t=0;encerrar()}
+    var v=[Math.floor(t/86400000),Math.floor(t%86400000/3600000),Math.floor(t%3600000/60000),Math.floor(t%60000/1000)];
+    for(var i=0;i<4;i++){if(cd[i])cd[i].textContent=p(v[i]);if(iv[i])iv[i].textContent=p(v[i])}
+    var st=g('st-t'); if(st) st.textContent=v[0]>0?v[0]+'d '+p(v[1])+'h':p(v[1])+':'+p(v[2])+':'+p(v[3]);
+  }
+  tick();setInterval(tick,1000);
 
   /* Barra fixa no celular: aparece depois do hero e some na área de preços */
   var bar=document.getElementById('sticky');
